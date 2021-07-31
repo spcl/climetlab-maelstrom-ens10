@@ -20,7 +20,7 @@ Features
 
 ## Using CliMetLab to access the data
 
-See the demo notebooks [here](https://github.com/spcl/climetlab-maelstrom-ens10/notebooks)
+See the demo notebooks [here](https://github.com/spcl/climetlab-maelstrom-ens10/tree/main/notebooks)
 
 Accessing data is performed on a date basis, where the dataset is organized by day-of-year (i.e., the file of each date contains all 20 forecasts at all of the 20 years). The dataset is also split to surface-level data, and pressure-level data for above-ground forecasts.
 
