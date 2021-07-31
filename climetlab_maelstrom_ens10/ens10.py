@@ -29,7 +29,7 @@ class Ens10(Dataset):
     via post-processing, as described in https://arxiv.org/abs/2005.08748. It consists of the model output data of
     ECMWF "hindcast" experiments. These are ensemble forecasts with 10 ensemble members that are spread over 20
     years (1998-2017) with two forecasts per week.
-        
+
     The dataset is grouped by day-of-year (i.e., a single date contains all 20 years of predictions), where 
     each date contains three steps: 0, 24, and 48 hour lead time. Thus, files contain three days at a time.
     To query the list of dates, run `all_datelist` on the loaded dataset.
@@ -42,7 +42,7 @@ class Ens10(Dataset):
 
     terms_of_use = (
         "By downloading data from this dataset, you agree to the terms and conditions defined at "
-        "https://github.com/spcl/climetlab_maelstrom_ens10/LICENSE "
+        "https://github.com/spcl/climetlab-maelstrom-ens10/LICENSE "
         "If you do not agree with such terms, do not download the data. ")
 
     all_datelist = [
