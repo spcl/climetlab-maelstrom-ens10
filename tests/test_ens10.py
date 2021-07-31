@@ -11,11 +11,7 @@ import climetlab as cml
 
 
 def test_read():
-    ds = cml.load_dataset(
-        "maelstrom-ens10-ens10",
-        year="2021",
-        parameter="t2m",
-    )
+    ds = cml.load_dataset("maelstrom-ens10", date='20170226', dtype='sfc')
     xds = ds.to_xarray()
     print(xds)
 
