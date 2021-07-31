@@ -30,12 +30,12 @@ class Ens10(Dataset):
     ECMWF "hindcast" experiments. These are ensemble forecasts with 10 ensemble members that are spread over 20
     years (1998-2017) with two forecasts per week.
 
-    The dataset is grouped by day-of-year (i.e., a single date contains all 20 years of predictions), where 
+    The dataset is grouped by day-of-year (i.e., a single date contains all 20 years of predictions), where
     each date contains three steps: 0, 24, and 48 hour lead time. Thus, files contain three days at a time.
     To query the list of dates, run `all_datelist` on the loaded dataset.
 
-    In every file, there are 6 dimensions of data (in this order): `number` (ensemble member), 
-    `time` (year offset from 1998), `step` (forecast lead time, 0=0h, 1=24h, 2=48h), 
+    In every file, there are 6 dimensions of data (in this order): `number` (ensemble member),
+    `time` (year offset from 1998), `step` (forecast lead time, 0=0h, 1=24h, 2=48h),
     `surface`/`isobaricInhPa` (pressure level), `latitude`, and `longitude`.
     """
     citation = "-"
