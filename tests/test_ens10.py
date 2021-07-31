@@ -8,8 +8,10 @@
 #
 
 import climetlab as cml
+import pytest
 
 
+@pytest.mark.skip
 def test_read():
     ds = cml.load_dataset("maelstrom-ens10", date="20170226", dtype="sfc")
     xds = ds.to_xarray()
