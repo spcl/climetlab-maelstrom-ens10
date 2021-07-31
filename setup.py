@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# (C) Copyright 2021 ECMWF.
+# (C) Copyright 2021 ECMWF, ETH Zurich.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -35,10 +35,10 @@ extras_require = {}
 setuptools.setup(
     name=package_name,
     version=version,
-    description="A dataset plugin for climetlab for the dataset maelstrom-ens10/ens10.",
+    description="A dataset plugin for climetlab for the ENS10 MAELSTROM dataset.",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="Tal Ben-Nun",
+    author="ECMWF and SPCL @ ETH Zurich",
     author_email="talbn@inf.ethz.ch",
     url="https://github.com/spcl/climetlab-maelstrom-ens10",
     license="Apache License Version 2.0",
@@ -49,8 +49,7 @@ setuptools.setup(
     zip_safe=True,
     entry_points={
         "climetlab.datasets": [
-            "maelstrom-ens10-ens10 = climetlab_maelstrom_ens10.ens10:Ens10",
-            # "maelstrom-ens10-other-dataset = climetlab_maelstrom_ens10.other_dataset:OtherDatasetClass",
+            "maelstrom-ens10 = climetlab_maelstrom_ens10.ens10:Ens10",
         ]
     },
     keywords="meteorology",

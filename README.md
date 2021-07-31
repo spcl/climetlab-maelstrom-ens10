@@ -1,37 +1,44 @@
-## maelstrom-ens10
+## ENS10 Dataset
 
-A dataset plugin for climetlab for the dataset maelstrom-ens10/ens10.
+A dataset plugin for CliMetLab for the ENS10 dataset from the MAELSTROM project.
 
+The ENS10 dataset is designed to help the development of machine learning tools to improve ensemble predictions via post-processing. It consists of the model output data of ECMWF "hindcast" experiments. These are ensemble forecasts with 10 ensemble members that are spread over 20 years (1998-2017) with two forecasts per week.
+
+Structure
+---------
+
+The dataset is grouped by day-of-year (i.e., a single date contains all 20 years of predictions), where 
+each date contains three steps: 0, 24, and 48 hour lead time. Thus, files contain three days at a time.
+To query the list of dates, run `all_datelist` on the loaded dataset.
+
+In every file, there are 6 dimensions of data (in this order): `number` (ensemble member), 
+`time` (year offset from 1998), `step` (forecast lead time, 0=0h, 1=24h, 2=48h), 
+`surface`/`isobaricInhPa` (pressure level), `latitude`, and `longitude`.
 
 Features
 --------
 
-In this README is a description of how to get the maelstrom-ens10.
+## Using CliMetLab to access the data
 
-## Datasets description
+See the demo notebooks [here](https://github.com/spcl/climetlab_maelstrom_ens10/notebooks)
 
-There are two datasets: 
+Accessing data is performed on a date basis, where the dataset is organized by day-of-year (i.e., the file of each date contains all 20 forecasts at all of the 20 years). The dataset is also split to surface-level data, and pressure-level data for above-ground forecasts.
 
-### 1 : `ens10`
+The `climetlab` python package allows easy access to the data with a few lines of code:
 
-
-### 2
-TODO
-
-
-## Using climetlab to access the data (supports grib, netcdf and zarr)
-
-See the demo notebooks here (https://github.com/ecmwf-lab/climetlab_maelstrom_ens10/notebooks
-
-https://github.com/ecmwf-lab/climetlab_maelstrom_ens10/notebooks/demo_ens10.ipynb
-[nbviewer] (https://nbviewer.jupyter.org/github/climetlab_maelstrom_ens10/blob/main/notebooks/demo_ens10.ipynb) 
-[colab] (https://colab.research.google.com/github/climetlab_maelstrom_ens10/blob/main/notebooks/demo_ens10.ipynb) 
-
-The climetlab python package allows easy access to the data with a few lines of code such as:
-```
-
+```python
 !pip install climetlab climetlab_maelstrom_ens10
 import climetlab as cml
-ds = cml.load_dataset(""maelstrom-ens10-ens10", date='20201231',)
+
+# Pressure-level data
+ds = cml.load_dataset("maelstrom-ens10", date='20170226', dtype='pl')
+
+# Surface-level data
+ds = cml.load_dataset("maelstrom-ens10", date='20170226', dtype='sfc')
+
+# Alternatively, the year can be omitted, and pressure levels are given by default:
+# ds = cml.load_dataset("maelstrom-ens10", date='0226')
+
+# Convert dataset to xarray data
 ds.to_xarray()
 ```
