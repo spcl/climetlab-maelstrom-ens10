@@ -57,7 +57,7 @@ jobs:
 
       - run: pip install climetlab
 
-      - name: Installing climetlab_maelstrom_ens10
+      - name: Installing climetlab-maelstrom-ens10
         run: pip install -e .
 
       - name: Tests

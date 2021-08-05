@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-# (C) Copyright 2021 ECMWF, ETH Zurich.
+# (C) Copyright 2021 ETH Zurich.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
-# In applying this licence, ECMWF does not waive the privileges and immunities
+# In applying this licence, ETH Zurich does not waive the privileges and immunities
 # granted to it by virtue of its status as an intergovernmental organisation
 # nor does it submit to any jurisdiction.
 #
@@ -20,7 +20,7 @@ def read(fname):
     return io.open(file_path, encoding="utf-8").read()
 
 
-package_name = "climetlab_maelstrom_ens10"
+package_name = "climetlab-maelstrom-ens10"
 
 version = None
 init_py = os.path.join(package_name.replace("-", "_"), "__init__.py")
@@ -38,7 +38,7 @@ setuptools.setup(
     description="A dataset plugin for climetlab for the ENS10 MAELSTROM dataset.",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="ECMWF and SPCL @ ETH Zurich",
+    author="SPCL @ ETH Zurich",
     author_email="talbn@inf.ethz.ch",
     url="https://github.com/spcl/climetlab-maelstrom-ens10",
     license="Apache License Version 2.0",

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# (C) Copyright 2021 ECMWF, ETH Zurich.
+# (C) Copyright 2021 ETH Zurich.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
-# In applying this licence, ECMWF does not waive the privileges and immunities
+# In applying this licence, ETH Zurich does not waive the privileges and immunities
 # granted to it by virtue of its status as an intergovernmental organisation
 # nor does it submit to any jurisdiction.
 #
@@ -42,7 +42,7 @@ class Ens10(Dataset):
 
     terms_of_use = (
         "By downloading data from this dataset, you agree to the terms and conditions defined at "
-        "https://github.com/spcl/climetlab-maelstrom-ens10/LICENSE "
+        "https://github.com/spcl/climetlab-maelstrom-ens10/blob/main/ENS10_LICENCE.txt "
         "If you do not agree with such terms, do not download the data. "
     )
 
