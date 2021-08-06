@@ -50,6 +50,7 @@ setuptools.setup(
     entry_points={
         "climetlab.datasets": [
             "maelstrom-ens10 = climetlab_maelstrom_ens10.ens10:Ens10",
+            "maelstrom-ens5mini = climetlab_maelstrom_ens10.toy:Ens5mini",
         ]
     },
     keywords="meteorology",

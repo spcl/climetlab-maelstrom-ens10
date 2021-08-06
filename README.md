@@ -15,6 +15,8 @@ In every file, there are 6 dimensions of data (in this order): `number` (ensembl
 `time` (year offset from 1998), `step` (forecast lead time, 0=0h, 1=24h, 2=48h), 
 `surface`/`isobaricInhPa` (pressure level), `latitude`, and `longitude`.
 
+**A smaller (10 GB) dataset is also available through this plugin as `maelstrom-ens5mini`**. It spans the first 10 years, cropped to Europe, and contains 5 ensemble members. See demo notebook on usage.
+
 Features
 --------
 
@@ -29,6 +31,9 @@ The `climetlab` python package allows easy access to the data with a few lines o
 ```python
 !pip install climetlab climetlab_maelstrom_ens10
 import climetlab as cml
+
+# Toy dataset
+ds = cml.load_dataset("maelstrom-ens5mini", date='01')
 
 # Pressure-level data
 ds = cml.load_dataset("maelstrom-ens10", date='20170226', dtype='pl')
