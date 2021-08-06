@@ -29,7 +29,7 @@ Accessing data is performed on a date basis, where the dataset is organized by d
 The `climetlab` python package allows easy access to the data with a few lines of code:
 
 ```python
-!pip install climetlab climetlab_maelstrom_ens10
+!pip install climetlab climetlab-maelstrom-ens10
 import climetlab as cml
 
 # Toy dataset
