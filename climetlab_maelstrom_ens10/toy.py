@@ -13,11 +13,12 @@ import climetlab as cml
 from climetlab import Dataset
 from climetlab.normalize import normalize_args
 
-__version__ = "0.1.1"
+__version__ = "0.2.1"
 
-URL = "https://storage.ecmwf.europeanweather.cloud"
 
-PATTERN = "{url}/MAELSTROM_AP4/toy/ens5mini.{month}.nc"
+URL = "https://object-store.os-api.cci1.ecmwf.int"
+
+PATTERN = "{url}/maelstrom-ap4/toy/ens5mini.{month}.nc"
 
 
 class Ens5mini(Dataset):
